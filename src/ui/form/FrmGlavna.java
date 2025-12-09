@@ -14,6 +14,7 @@ import logic.Controller;
 public class FrmGlavna extends javax.swing.JFrame {
     
     private Nastavnik ulogovaniNastavnik;
+    private FrmTabelaPredmeta formaTabelaPredmeta;
 
     /**
      * Creates new form FrmGlavna2
@@ -80,12 +81,16 @@ public class FrmGlavna extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        FrmTabelaPredmeta forma = new FrmTabelaPredmeta(ulogovaniNastavnik);
-        forma.setVisible(true);
+        if(formaTabelaPredmeta == null || !formaTabelaPredmeta.isVisible()){
+            formaTabelaPredmeta = new FrmTabelaPredmeta(ulogovaniNastavnik);
+            formaTabelaPredmeta.setVisible(true);
+        }else{
+            formaTabelaPredmeta.toFront();
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItemDodajAngazovanjeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDodajAngazovanjeActionPerformed
-        FrmDodajAngazovanje forma = new FrmDodajAngazovanje(ulogovaniNastavnik, this);
+        FrmDodajAngazovanje forma = new FrmDodajAngazovanje(ulogovaniNastavnik, formaTabelaPredmeta);
         forma.setVisible(true);
     }//GEN-LAST:event_jMenuItemDodajAngazovanjeActionPerformed
 

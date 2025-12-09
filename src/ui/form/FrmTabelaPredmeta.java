@@ -17,6 +17,7 @@ public class FrmTabelaPredmeta extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmTabelaPredmeta.class.getName());
 
     private Nastavnik ulogovaniNastavnik;
+    private TabelaPredmetaModel model;
     
     /**
      * Creates new form FrmTabelaPredmeta
@@ -102,8 +103,20 @@ public class FrmTabelaPredmeta extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void pripremiTabelu() throws Exception {
-        TabelaPredmetaModel model = new TabelaPredmetaModel(ulogovaniNastavnik);
+        
+        model = new TabelaPredmetaModel(ulogovaniNastavnik);
         tblPredmeti.setModel(model);
         model.ucitajPredmete();
+    }
+    
+    public void osveziTabelu(){
+        try {
+            model.ucitajPredmete();
+            model.fireTableDataChanged();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Greska pri osvezavanju tabelu: " + e.getMessage(), "Greska", JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        
     }
 }

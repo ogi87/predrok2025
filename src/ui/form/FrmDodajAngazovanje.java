@@ -20,7 +20,8 @@ public class FrmDodajAngazovanje extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmDodajAngazovanje.class.getName());
     private Nastavnik ulogovaniNastavnik;
-    private FrmGlavna glavnaForma;
+   // private FrmGlavna glavnaForma;
+    private FrmTabelaPredmeta formaZaOsvezavanje;
     
     
     /**
@@ -29,10 +30,10 @@ public class FrmDodajAngazovanje extends javax.swing.JFrame {
     public FrmDodajAngazovanje() {
         
     }
-    public FrmDodajAngazovanje(Nastavnik ulogovaniNastavnik, FrmGlavna glavnaForma){
+    public FrmDodajAngazovanje(Nastavnik ulogovaniNastavnik, FrmTabelaPredmeta formaZaOsvezavanje){
         initComponents();
         this.ulogovaniNastavnik = ulogovaniNastavnik;
-        this.glavnaForma = glavnaForma;
+        this.formaZaOsvezavanje = formaZaOsvezavanje;
         setTitle("Dodavanje novog angazovanja za: " + ulogovaniNastavnik.getIme());
         
         try {
@@ -114,6 +115,9 @@ public class FrmDodajAngazovanje extends javax.swing.JFrame {
             Controller.getInstance().sacuvajAngazovanje(ulogovaniNastavnik, izabraniPredmet, izabraniOblik);
             JOptionPane.showMessageDialog(this, "Angazovanje je uspesno sacuvano","Uspeh", JOptionPane.INFORMATION_MESSAGE);
             
+            if(formaZaOsvezavanje != null){
+                formaZaOsvezavanje.osveziTabelu();
+            }
             
             this.dispose();
         } catch (Exception e) {
