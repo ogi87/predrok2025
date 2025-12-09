@@ -101,5 +101,47 @@ public class DatabaseBroker {
         return oblici;
     }
     
+    public List<Predmet> getAllPredmeti() throws SQLException{
+        List<Predmet> predmeti = new ArrayList<>();
+        String query = "SELECT id, naziv, espb FROM predmet";
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        
+        while(rs.next()){
+            Predmet p = new Predmet();
+            p.setId(rs.getLong("id"));
+            p.setNaziv(rs.getString("naziv"));
+            p.setEspb(rs.getInt("espb"));
+            predmeti.add(p);
+        }
+        return predmeti;
+    }
+    
+    public List<OblikNastave> getAllObliciNastave() throws SQLException{
+        List<OblikNastave> oblici = new ArrayList<>();
+        String query = "SELECT id, naziv FROM oblik_nastave";
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        
+        while(rs.next()){
+            OblikNastave on = new OblikNastave();
+            on.setId(rs.getLong("id"));
+            on.setNaziv(rs.getString("naziv"));
+            oblici.add(on);
+        }
+        return oblici;
+    }
+    
+    public void insertAngazovanje(Nastavnik n, Predmet p, OblikNastave on) throws SQLException{
+        String query = "INSERT INTO angazovanje(nastavnikId, predmetId, oblikNastaveId) VALUES (?, ?, ?)";
+        PreparedStatement ps = connection.prepareStatement(query);
+        ps.setLong(1, n.getId());
+        ps.setLong(2, p.getId());
+        ps.setLong(3, on.getId());
+        
+        ps.executeUpdate();
+        
+    }
+    
     
 }

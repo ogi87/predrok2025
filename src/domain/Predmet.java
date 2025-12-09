@@ -46,6 +46,11 @@ public class Predmet {
     public void setEspb(int espb) {
         this.espb = espb;
     }
+
+    @Override
+    public String toString() {
+        return naziv;
+    }
     
     
     

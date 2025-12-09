@@ -57,5 +57,33 @@ public class Controller {
         }
     }
     
+    public List<Predmet> ucitajSvePredmete() throws Exception{
+        dbbr.connect();
+        try {
+            return dbbr.getAllPredmeti();
+        } finally{
+            dbbr.disconnect();
+        }
+    }
+    
+    public List<OblikNastave> ucitajSveObliciNastave() throws Exception{
+        dbbr.connect();
+        try{
+            return dbbr.getAllObliciNastave();
+        }finally{
+            dbbr.disconnect();
+        }
+    }
+    
+    public void sacuvajAngazovanje(Nastavnik n, Predmet p, OblikNastave on) throws Exception{
+        dbbr.connect();
+        try{
+            dbbr.insertAngazovanje(n, p, on);
+        }finally{
+            dbbr.disconnect();
+        }
+    }
+    
+    
     
 }
