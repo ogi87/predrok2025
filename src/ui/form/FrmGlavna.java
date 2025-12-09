@@ -11,18 +11,18 @@ import logic.Controller;
  *
  * @author Ognjen
  */
-public class FrmGlavna2 extends javax.swing.JFrame {
+public class FrmGlavna extends javax.swing.JFrame {
     
     private Nastavnik ulogovaniNastavnik;
 
     /**
      * Creates new form FrmGlavna2
      */
-    public FrmGlavna2() {
+    public FrmGlavna() {
         initComponents();
     }
 
-    public FrmGlavna2(Nastavnik ulogovaniNastavnik) {
+    public FrmGlavna(Nastavnik ulogovaniNastavnik) {
       this();
       this.ulogovaniNastavnik = ulogovaniNastavnik;
     }
@@ -97,7 +97,7 @@ public class FrmGlavna2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmGlavna2().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FrmGlavna().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

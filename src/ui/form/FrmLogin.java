@@ -12,7 +12,7 @@ import logic.Controller;
  *
  * @author Ognjen
  */
-public class FrmLogin2 extends javax.swing.JFrame {
+public class FrmLogin extends javax.swing.JFrame {
    
 
     Controller controller = new Controller();
@@ -20,7 +20,7 @@ public class FrmLogin2 extends javax.swing.JFrame {
     /**
      * Creates new form FrmLogin2
      */
-    public FrmLogin2() {
+    public FrmLogin() {
         initComponents();
     }
 
@@ -135,7 +135,7 @@ public class FrmLogin2 extends javax.swing.JFrame {
             Nastavnik nastavnik = controller.prijavaNastavnika(email, sifra);
             JOptionPane.showMessageDialog(this, "Dobrodosli, " + nastavnik.getIme(), "Uspesna prijava", JOptionPane.INFORMATION_MESSAGE);
             
-            FrmGlavna2 formaGlavna = new FrmGlavna2(nastavnik);
+            FrmGlavna formaGlavna = new FrmGlavna(nastavnik);
             formaGlavna.setVisible(true);
             this.dispose();
             
@@ -166,7 +166,7 @@ public class FrmLogin2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmLogin2().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FrmLogin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

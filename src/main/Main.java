@@ -5,7 +5,7 @@
 package main;
 
 
-import ui.form.FrmLogin2;
+import ui.form.FrmLogin;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FrmLogin2 frmLogin2 = new FrmLogin2();
+        FrmLogin frmLogin2 = new FrmLogin();
         
        
         frmLogin2.setVisible(true);
