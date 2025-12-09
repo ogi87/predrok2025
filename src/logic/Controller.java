@@ -16,10 +16,18 @@ import repository.db.DatabaseBroker;
  * @author Ognjen
  */
 public class Controller {
+    private static Controller instance;
     private DatabaseBroker dbbr;
 
     public Controller() {
         dbbr = new DatabaseBroker();
+    }
+    
+    public static Controller getInstance(){
+        if(instance == null){
+            instance = new Controller();
+        }
+        return instance;
     }
     
     public Nastavnik prijavaNastavnika(String email, String sifra) throws Exception{

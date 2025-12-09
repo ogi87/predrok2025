@@ -84,8 +84,8 @@ public class DatabaseBroker {
     
     public List<OblikNastave> getObliciNastave(Nastavnik nastavnik, Predmet predmet) throws SQLException{
         List<OblikNastave> oblici = new ArrayList<>();
-        String query = "SELECT o.id, o.naziv FROM oblik_nastave o"
-                + "JOIN angazovanje a ON o.id = a.oblikNastaveId WHERE"
+        String query = "SELECT o.id, o.naziv FROM oblik_nastave o "
+                + "JOIN angazovanje a ON o.id = a.oblikNastaveId WHERE "
                 + "a.nastavnikId = ? AND a.predmetId = ?";
         
         PreparedStatement ps = connection.prepareStatement(query);

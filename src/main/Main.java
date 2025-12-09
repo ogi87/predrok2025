@@ -4,6 +4,9 @@
  */
 package main;
 
+
+import ui.form.FrmLogin2;
+
 /**
  *
  * @author Ognjen
@@ -14,7 +17,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FrmLogin2 frmLogin2 = new FrmLogin2();
+        
+       
+        frmLogin2.setVisible(true);
     }
     
 }
