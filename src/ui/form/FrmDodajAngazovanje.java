@@ -74,6 +74,7 @@ public class FrmDodajAngazovanje extends javax.swing.JFrame {
         btnPonisti = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(620, 25));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setText("Predmet");
@@ -97,6 +98,11 @@ public class FrmDodajAngazovanje extends javax.swing.JFrame {
         getContentPane().add(btnSacuvaj, new java.awt.GridBagConstraints());
 
         btnPonisti.setText("Ponisti");
+        btnPonisti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPonistiActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnPonisti, new java.awt.GridBagConstraints());
 
         pack();
@@ -126,6 +132,10 @@ public class FrmDodajAngazovanje extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnSacuvajActionPerformed
+
+    private void btnPonistiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPonistiActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnPonistiActionPerformed
 
     /**
      * @param args the command line arguments

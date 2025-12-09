@@ -51,7 +51,7 @@ public class FrmTabelaPredmeta extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPredmeti = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Predmeti ");
 
         tblPredmeti.setModel(new javax.swing.table.DefaultTableModel(
